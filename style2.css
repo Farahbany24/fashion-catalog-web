@@ -1,0 +1,21 @@
+/* Hero Section */
+.hero {
+    background-color: #eae5e5;
+}
+
+.hero h1 {
+    color: #7c6b6b;
+}
+
+.banner h2 {
+    color: #4d4d4d;
+}
+
+.banner p {
+    color: #7c6b6b;
+}
+
+/* Brands Section */
+.brands img {
+    max-width: 100px;
+}
