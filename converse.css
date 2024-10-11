@@ -21,6 +21,8 @@
 
 .navbar-brand {
     margin-left: 100px;
+    text-decoration: none;
+    list-style: none;
 }
 
 .login-button {
