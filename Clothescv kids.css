@@ -99,3 +99,23 @@
     display: none;
     /* Menghapus tanda panah default bootstrap */
 } 
+
+.card-title {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 18.67px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-family:  "Open Sans", sans-serif !important;
+    font-size: 18px;
+    font-weight: 600;
+    color: #716e6e;
+}
+
+.card-text1{
+    font-family:  "Open Sans", sans-serif !important;
+    font-size: 17.67px;
+    font-weight: 600;
+    color: #000000;
+}
