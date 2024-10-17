@@ -87,3 +87,47 @@
         visibility: visible;
     }
 }
+
+/* Mengatur tampilan dropdown saat di-hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    /* Menampilkan dropdown */
+    margin-top: 0;
+    /* Mencegah penundaan margin */
+}
+
+/* Tambahkan pointer ke dropdown toggle */
+.nav-link.dropdown-toggle::after {
+    display: none;
+    /* Menghapus tanda panah default bootstrap */
+}
+
+.converse {
+    display: flex;
+    justify-content: center; /* Untuk memusatkan secara horizontal */
+    align-items: center;     /* Untuk memusatkan secara vertikal */
+    height: 40vh;
+    margin-bottom: -230px;
+}
+
+.converse img {
+    width: 300px;
+    height: auto;
+}
+
+.photo img {
+    width: 100%;
+
+}
+
+.photo-grid-container {
+    column-count: 5;
+    column-width: 300px;
+    padding: 16vh 10vh;
+}
+
+.photo {
+    margin: 0 auto 15px;
+    max-width: 400px;
+    width: 100%;
+}
