@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-
 .aboreto-regular {
     font-family: "Aboreto", system-ui !important;
     font-weight: 600;
@@ -21,6 +19,8 @@
 
 .navbar-brand {
     margin-left: 100px;
+    text-decoration: none;
+    list-style: none;
 }
 
 .login-button {
@@ -35,7 +35,7 @@
 }
 
 .logo {
-    width: 30px;
+    width: 18px;
     /* Atur lebar logo sesuai kebutuhan */
     height: auto;
     /* Mempertahankan proporsi logo */
@@ -45,7 +45,7 @@
     margin-left: -100px;
     /* Jarak antara toggler dan login button, sesuaikan sesuai kebutuhan */
     border: none;
-    font-size: 1.25rem;
+    font-size: 1.25 rem;
 }
 
 .navbar :focus,
@@ -86,93 +86,16 @@
     }
 }
 
-.text-center {
-    font-family: "Poppins", serif;
-    font-weight: bolder;
-    font-style: normal;
-    color: #8c7878;
-    margin-top: 25px;
-    padding-top: 25px;
+/* Mengatur tampilan dropdown saat di-hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    /* Menampilkan dropdown */
+    margin-top: 0;
+    /* Mencegah penundaan margin */
 }
 
-.carousel-indicators [data-bs-target] {
-    width: 6px; /* Lebar bundar */
-    height: 6px; /* Tinggi bundar */
-    border-radius: 50%; /* Membuat indikator menjadi lingkaran */
-    background-color: rgba(255, 255, 255, 0.5); /* Warna default indikator */
-}
-
-.carousel-indicators .active {
-    background-color: rgba(255, 255, 255, 0.9); /* Warna saat indikator aktif */
-}
-
-.carousel-inner{
-    margin-top: 50px;
-}
-
-#item-1 {
-    width : 100%;
-    object-fit: contain;
-    height: 500px;
-}
-
-#item-2 {
-    width : 100%;
-    height: 500px;
-    object-fit: contain;
-}
-
-#item-3 {
-    width : 100%;
-    height: 500px;
-    object-fit: contain;
-}
-
-#item-4 {
-    width : 100%;
-    height: 500px;
-    object-fit: contain;
-}
-
-#item-5 {
-    width: 100%;
-    height: 500px;
-    object-fit: contain;
-}
-
-#item-6 {
-    width: 100%;
-    height: 500px;
-    object-fit: contain;
-}
-
-#item-7 {
-    width: 100%;
-    height: 500px;
-    object-fit: contain;
-}
-
-.navbar-logo {       
-    display: grid;
-    grid-template-columns: 150px 150px 150px;
-    grid-auto-rows: 100px;
-    grid-gap: 10px; 
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    background-color: white;
-    padding: 50px;
-}
-.navbar-logo img {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    border-radius: 50%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    transition: transform 0.3s ease;
-}
-
-.navbar-logo img:hover {
-    transform: scale(1.1);
+/* Tambahkan pointer ke dropdown toggle */
+.nav-link.dropdown-toggle::after {
+    display: none;
+    /* Menghapus tanda panah default bootstrap */
 }
