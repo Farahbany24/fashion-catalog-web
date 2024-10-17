@@ -108,7 +108,7 @@ img {
 .photo-grid-container {
     column-count: 5;
     column-width: 300px;
-    padding: 16vh 10vh;
+    padding: 0vh 16vh 0vh 16vh;
 }
 
 .photo-grid-item {
