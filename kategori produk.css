@@ -21,24 +21,7 @@
     margin-left: 100px;
     text-decoration: none;
     list-style: none;
-}
-
-.login-button {
-    display: flex;
-    align-items: center;
-    padding: 8px 20px;
-    text-decoration: none;
-    /* Menghilangkan garis bawah pada link */
-    color: #000000a6;
-    /* Ubah warna teks sesuai kebutuhan */
-    padding-right: 100px;
-}
-
-.logo {
-    width: 18px;
-    /* Atur lebar logo sesuai kebutuhan */
-    height: auto;
-    /* Mempertahankan proporsi logo */
+    position: fixed;
 }
 
 .navbar-toggler {
