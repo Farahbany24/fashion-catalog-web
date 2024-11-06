@@ -70,5 +70,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               echo "<img src='$destinationPath' alt='Uploaded Image' style='max-width: 400px;'>";
         ?>
     </h1>
+
+    <h3>
+        <?php
+        echo $Brand_id
+        ?>
+    </h3>
+    
 </body>
 </html>
