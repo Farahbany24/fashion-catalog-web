@@ -1,3 +1,7 @@
+<?php
+require_once "../config/config.php";
+    require "data.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,7 +15,7 @@
         <div class="row">
             <div class="col-6">
             <h2>Input Data Product </h2>
-                <form method="post" action="">
+                <form method="post" action="" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="namaProduct" class="form-label">Name </label>
                         <input type="text" class="form-control" name="name" >
