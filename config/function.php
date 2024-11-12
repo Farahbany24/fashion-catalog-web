@@ -18,16 +18,15 @@ function inputData($data, $koneksi){
     $Brand_id = $data['Brand_id'];
     $Category_id= $_POST['Category_id'];
     $image = $data['image'];
-    $tanggal = time();
 
-    $sql = "INSERT INTO product (name, description, price, brand_id, category_id, image, tanggal) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO product (name, description, price, brand_id, category_id, image) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($koneksi, $sql);
     if($stmt === false) 
     {
         return "failed";
     }
 
-    mysqli_stmt_bind_param($stmt, 'siiiisi', $judul, $pengarang, $penerbit, $tahun, $genre, $sinopsis, $tanggal);
+    mysqli_stmt_bind_param($stmt, 'ssiiis', $name, $description, $price, $Brand_id, $Category_id, $image);
     $result = mysqli_stmt_execute($stmt);
 
     if(!$result)
@@ -36,3 +35,6 @@ function inputData($data, $koneksi){
     mysqli_stmt_close($stmt);
     return true;  
 }
+
+
+?>

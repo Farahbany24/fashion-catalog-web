@@ -1,4 +1,5 @@
 <?php
+require '../config/config.php';
 
 if(isset($_POST['submit'])){
 
@@ -30,7 +31,7 @@ if(isset($_POST['submit'])){
 
     if($validasi == 0 ){
         echo "data sudah lengkap siap di inputkan";
-        $result = inputProduct($data, $koneksi);
+        $result = inputData($data, $koneksi);
         if($result) 
         { 
             $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
