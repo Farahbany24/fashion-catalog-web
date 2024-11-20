@@ -36,5 +36,14 @@ function inputData($data, $koneksi){
     return true;  
 }
 
+function viewProduct($koneksi){
 
+    $sql = "SELECT * FROM product WHERE 1";
+
+    $stmt = mysqli_query($koneksi, $sql);
+
+    if(mysqli_num_rows($stmt) > 0) return mysqli_fetch_all($stmt, MYSQLI_ASSOC);
+    else return false; 
+    
+}
 ?>
