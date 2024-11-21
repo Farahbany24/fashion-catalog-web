@@ -13,4 +13,4 @@ function tambahGambar($dest,array $pict){
 	else return false;
 }
 
-?>6
+?>
