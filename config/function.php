@@ -46,4 +46,31 @@ function viewProduct($koneksi){
     else return false; 
     
 }
+
+function viewBrand($koneksi){
+    $sql = "SELECT * FROM brand";
+    $stmt = mysqli_query($koneksi, $sql);
+
+    if(mysqli_num_rows($stmt) > 0 ) return mysqli_fetch_all($stmt, MYSQLI_ASSOC);
+    else return false;
+}
+
+function viewCategory($koneksi){
+    $sql = "SELECT * FROM category";
+    $stmt = mysqli_query($koneksi, $sql);
+
+    if(mysqli_num_rows($stmt) > 0 ) return mysqli_fetch_all($stmt, MYSQLI_ASSOC);
+    else return false;
+}
+
+function delProduct($koneksi, $id){
+    $sql = "DELETE FROM product WHERE id = ?";
+    $stmt = mysqli_prepare($koneksi, $sql);
+
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    $result = mysqli_stmt_execute($stmt);
+
+    if($result) return true;
+    else return false; 
+}
 ?>

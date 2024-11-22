@@ -33,21 +33,38 @@ require_once "../config/config.php";
                         <label for="brandProduct" class="form-label">Brand_id</label>
                         <select class="form-select" name="Brand_id">
                             <option selected value="0">--Pilih Brand--</option>
-                            <option value="1">Converse</option>
-                            <option value="2">Nike</option>
-                            <option value="3">New Balance</option>
-                            <option value="4">Onitsuka Tiger</option>
-                            <option value="5">Adidas</option>
-                            <option value="6">Polo Ralph</option>
+                            <?php 
+                                    $Brand_id = viewBrand($koneksi);
+
+                                    if($Brand_id != false) {
+                                        foreach($Brand_id as $recA) {
+                                ?>
+
+                                <option value="<?= $recA['id'] ?>"><?= $recA['name'] ?></option>
+
+                                <?php 
+                                        }
+                                    } 
+                                ?>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="kategoriProduct" class="form-label">Category_id</label>
                         <select class="form-select" name="Category_id">
                             <option selected value="0">--Pilih Category--</option>
-                            <option value="1">Men</option>
-                            <option value="2">Women</option>
-                            <option value="3">Kids</option>
+                            <?php 
+                                    $Category_id = viewCategory($koneksi);
+
+                                    if($Category_id != false) {
+                                        foreach($Category_id as $recA) {
+                                ?>
+
+                                <option value="<?= $recA['id'] ?>"><?= $recA['name'] ?></option>
+
+                                <?php 
+                                        }
+                                    } 
+                                ?>
 
                         </select>
                     </div>

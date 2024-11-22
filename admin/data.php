@@ -45,11 +45,27 @@ if (isset($_POST['submit'])) {
                     echo "Error moving the uploaded file.";
                 }
 
-                header("location:input_product.php?status=1");
+                header("location:view.php");
             } else header("location:input_product.php?errno=1");
         } else {
             echo "data $validasi kurang";
         }
+    }
+
+}
+else if(isset($_GET['del'])){
+    $id = $_GET['del'] ?? null;
+
+    if($id === null || !ctype_digit($id)){
+        header("location:view.php?errno=3");
+    }
+    else {
+        // function delete
+        $result = delProduct($koneksi, $id);
+        if($result) 
+            header("location:view.php?success=1");
+        else 
+            header("location:view.php?errno=5");
     }
 }
 //gambar

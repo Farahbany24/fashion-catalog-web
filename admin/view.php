@@ -1,69 +1,76 @@
-<?php 
+<?php
 require "../config/config.php";
 require "../admin/data.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="view.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>View</title>
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10">
-                <?php 
-                    $product = viewProduct($koneksi);
 
-                    if($product == 0) {
-                        echo 'Data Kosong';
-                    }
-                    else {
+<body class="bg-gray-50">
+    <div class="min-h-screen p-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <?php
+                $product = viewProduct($koneksi);
+                if ($product == 0) {
+                    echo '<div class="p-4 text-gray-500">Data Kosong</div>';
+                } else {
                 ?>
-                <table class=table>
-                    <tr>
-                        <th>No.</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Brand_id</th>
-                        <th>Category_id</th>
-                        <th>Image</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                    <?php 
-                    // awalan foreach 
-                    $no = 1; 
-                    foreach($product as $data) {
-                    ?>
-                    <tr>
-                        <td><?= $no ?></td>
-                        <td><?= $data['name'] ?></td>
-                        <td><?= $data['description'] ?></td>
-                        <td><?= $data['price'] ?></td>
-                        <td><?= $data['brand_id'] ?></td>
-                        <td><?= $data['category_id'] ?></td>
-                        <td><?= $data['image'] ?></td>
-                        <td class="td"><button class="btn btn-primary">
-                        <a class= "edit-delete" href="#">Edit</a></td>
-                        <td><button class="btn btn-primary">
-                        <a class= "edit-delete" href="#">Delete</a></td>
-                        </button>
-                    </tr>
-                    <?php 
-                       $no ++;
-                    }
-                        // akhiran foreach
-                    ?>
-                </table>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="px-6 py-4 text-sm font-semibold text-gray-600">No.</th>
+                                    <th class="px-6 py-4 text-sm font-semibold text-gray-600">Name</th>
+                                    <th class="px-6 py-4 text-sm font-semibold text-gray-600">Description</th>
+                                    <th class="px-6 py-4 text-sm font-semibold text-gray-600">Price</th>
+                                    <th class="px-6 py-4 text-sm font-semibold text-gray-600">Brand_id</th>
+                                    <th class="px-6 py-4 text-sm font-semibold text-gray-600">Category_id</th>
+                                    <th class="px-6 py-4 text-sm font-semibold text-gray-600">Image</th>
+                                    <th class="px-6 py-4 text-sm font-semibold text-gray-600" colspan="2">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <?php
+                                $no = 1;
+                                foreach ($product as $data) {
+                                ?>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $no ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['name'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['description'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['price'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['brand_id'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['category_id'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['image'] ?></td>
+                                        <td class="px-6 py-4 text-sm">
+                                            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                                Edit
+                                            </a>
+                                        </td>
+                                        <td class="px-6 py-4 text-sm">
+                                            <a href="?del=<?= $data['id'] ?>"class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php 
+                                    $no++;
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
                 <?php } ?>
             </div>
         </div>
     </div>
 </body>
+
 </html>
