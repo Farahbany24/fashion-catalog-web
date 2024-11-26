@@ -14,7 +14,7 @@ function validasiData($data){
 function inputData($data, $koneksi){
     $name = $data['name'];
     $description = $data['description'];
-    $price = $data['price'];
+    $price = $data['price']  ;
     $Brand_id = $data['Brand_id'];
     $Category_id= $_POST['Category_id'];
     $image = $data['image'];
@@ -38,7 +38,9 @@ function inputData($data, $koneksi){
 
 function viewProduct($koneksi){
 
-    $sql = "SELECT * FROM product WHERE 1";
+    $sql = "SELECT product.*, product.name as namaProduk, brand.name as namaBrand, category.name as namaKat FROM product 
+                LEFT JOIN brand ON product.brand_id = brand.id
+                LEFT JOIN category ON product.category_id = category.id WHERE 1";
 
     $stmt = mysqli_query($koneksi, $sql);
 

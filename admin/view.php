@@ -43,12 +43,13 @@ require "../admin/data.php";
                                 ?>
                                     <tr class="hover:bg-gray-50">
                                         <td class="px-6 py-4 text-sm text-gray-500"><?= $no ?></td>
-                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['name'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['namaProduk'] ?></td>
                                         <td class="px-6 py-4 text-sm text-gray-500"><?= $data['description'] ?></td>
-                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['price'] ?></td>
-                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['brand_id'] ?></td>
-                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['category_id'] ?></td>
-                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['image'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">Rp. <?= number_format($data['price'],0,',','.') ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['namaBrand'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"><?= $data['namaKat'] ?></td>
+                                        <td class="px-6 py-4 text-sm text-gray-500"> 
+                                            <img src="../upload/<?= $data['image'] ?>" /></td>
                                         <td class="px-6 py-4 text-sm">
                                             <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                                 Edit

@@ -1,5 +1,5 @@
 <?php 
-    $rootDir = $_SERVER['DOCUMENT_ROOT'];
+    $rootDir = $_SERVER['DOCUMENT_ROOT'] . '/fashion-catalog-web';
     $server = "localhost"; // nama server
     $user = "root";
     $pass = '';
