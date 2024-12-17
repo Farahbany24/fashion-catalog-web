@@ -14,36 +14,77 @@
 </head>
 
 <body>
-  <div class="login-box">
-    <div class="login-header">
-        <header>Login</header>
-    </div>
-    <div class="input-box">
-        <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+    <!-- main container -->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+
+        <!-- login container -->
+        <div class="row border rounded-5 p-3 shadow box-area" style="background-color: #659287;">
+
+            <!-- left box -->
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #1A1A19;">
+                <div class="featured-image mb-3">
+                    <img src="assets/img/loginnew.png" class="img-fluid" style="width: 350px;">
+                </div>
+                <p class="text-white fs-2 judul" style="font-weight: 600;">Be verified</p>
+                <small class="text-white text-wrap text-center" style="width: 17rem; font-family: 'Courier New', Courier, monospace; font-weight: 400;">Join and Unveil Your Inner Glamour, Discover Fashion with a Soul.</small>
+            </div>
+            <!-- right box -->
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                    <div class="header-text mb-4">
+                       <h2>Hello, Again</h2>
+                       <p>We are happy to have you back.</p>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
+                    </div>
+                    <div class="input-ps mb-1 position-relative">
+                        <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" id="password">
+                        <span></span>
+                        <img src="assets/img/hide.png" alt="Eye Icon" id="toggle-password">
+                    </div>                                      
+                    <div class="input-group mb-5 d-flex justify-content-between">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="formCheck">
+                            <label for="formCheck" class="form-check-label text-secondary"><small  style="color: white; font-weight: bold;">Remember Me</small></label>
+                        </div>
+                        <div class="forgot">
+                            <small><a href="#" class="forgot-sign" style="text-decoration: none;">Forgot Password?</a></small>
+                        </div>
+                    </div>
+                    <div class="input-group mb-4">
+                        <button class="btn btn-lg btn-light-custom w-100 fs-6">Login</button>
+                    </div>
+                    <div class="input-group mb-4">
+                        <button class="btn btn-lg btn-light-custom w-100 fs-6"><img src="assets/img/google.png" style="width: 25px;" class="me-2"><small>Sign In with Google</small></button>
+                    </div>
+                    <div class="row">
+                        <small>Don't have account? <a href="index.html"  class="forgot-sign" style="text-decoration: none;">Sign Up</a></small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
-    <div class="input-box">
-        <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
-    </div>
-    <div class="forgot">
-        <section>
-            <input type="checkbox" id="check">
-            <label for="check">Remember me</label>
-        </section>
-        <section>
-            <a href="#">Forgot Password</a>
-        </section>
-    </div>
-    <div class="input-submit">
-        <button class="submit-btn" id="submit"></button>
-        <label for="submit">Sign In</label>
-    </div>
-    <section class="skip">
-        <a href="index.html">Skip ae le</a>
-    </section>
-    <div class="sign-up-link">
-        <p>Don't have account? <a href="#">Sign Up</a></p>
-    </div>
-</div>
+
+    <script>
+        const passwordField = document.getElementById('password');
+        const togglePassword = document.getElementById('toggle-password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+
+            // Ganti gambar jika password disembunyikan atau ditampilkan
+            if (type === 'password') {
+                togglePassword.src = 'assets/img/hide.png';  // Gambar untuk mata tertutup
+            } else {
+                togglePassword.src = 'assets/img/view.png';  // Gambar untuk mata terbuka
+            }
+        });
+    </script>
 </body>
-
+</html>

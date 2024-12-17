@@ -1,135 +1,129 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
- /* Mengatur body agar form berada di tengah */
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif  ;
-}
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #E8F9FD;
+    font-family: 'Poppins', sans-serif;
+    background: black;
 }
 
-.login-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 440px;
-    height: 480px;
-    padding: 30px;
+/* login container */
+
+.box-area {
+    width: 930px;
 }
 
-.login-header {
-    text-align: center;
-    margin: 20px 0 40px 0;
+
+/* left box */
+.judul {
+    font-family: "aboreto", system-ui;
 }
 
-.login-header header{
-    color: #000000;
-    font-size: 30px;
-    font-weight: 600;
+/* right box */
+.right-box {
+    padding: 40px 30px 40px 40px;
 }
 
-.input-box, .input-field {
-    width: 100%;
-    height: 60px;
-    font-size: 17px;
-    padding: 0 25px;
-    margin-bottom: 15px;
-    border-radius: 30px;
-    border: none;
-    box-shadow: 0px 5px 10px 1px rgba(0,0,0, 0.05);
+.header-text {
+    color: #1A1A19;
+}
+
+.btn {
+    --glow-color: rgb(144, 224, 200);
+    /* Soft Aqua Teal */
+    --glow-spread-color: rgba(102, 153, 135, 0.6);
+    /* Teal transparan */
+    --enhanced-glow-color: rgb(192, 229, 219);
+    /* Light Mint Teal */
+    --btn-color: rgb(70, 90, 90); /* Abu-abu teal tua */
+
+
+    border: 0.25rem solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
     outline: none;
-    transition: .3s;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
 }
 
-::placeholder{
-    font-weight: 500;
-    color: #222;
+.btn::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX('35deg') scale(1, 0.6);
 }
 
-.input-field:focus{
-    width: 105%;
+.btn:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
 }
 
-.forgot{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
+.btn:active {
+    box-shadow: 0 0 0 0.6em 0.25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 0.5em 0.25em var(--glow-color);
 }
 
-section{
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #555;
+.forgot-sign {
+    color: white; /* Warna teks normal */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    font-weight: bold; /* Menebalkan teks */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Animasi transisi */
 }
 
-#check{
-    margin-right: 10px;
+.forgot-sign:hover {
+    color: rgb(70, 90, 90); /* Warna teks saat hover (lebih gelap) */
+    text-decoration: underline; /* Menambahkan garis bawah saat hover */
 }
 
-a{
-    text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
-}
-section a{
-    color: #555 ;
-}
-
-.input-submit{
+.input-ps {
     position: relative;
 }
 
-.submit-btn{
-    width: 100%;
-    height: 60px;
-    background: #222;
-    border: none;
-    border-radius: 30px;
+.input-ps img {
+    width: 25px;
     cursor: pointer;
-    transition: .3s;
-}
-
-.input-submit label{
     position: absolute;
-    top: 45%;
-    left: 50%;
-    color: #fff;
-    -webkit-transform: translate(-50%, -50%) ;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    cursor: pointer;
+    right: 17px;  /* Posisi gambar di sebelah kanan input */
+    top: 50%;
+    transform: translateY(-50%);  /* Menjaga posisi gambar di tengah vertikal */
 }
 
-.submit-btn:hover{
-    background: #000;
-    transform: scale(1.05,1);
+
+/* custom placeholder */
+::placeholder {
+    font-size: 16px;
 }
 
-.sign-up-link{
-    text-align: center;
-    font-size: 15px;
-    margin-top: 20px;
+/* for small screens */
+@media only screen and (max-width: 768px) {
+    .box-area {
+        margin: 0 10px;
+    }
+
+    .left-box {
+        height: 100px;
+        overflow: hidden;
+    }
+
+    .right-box {
+        padding: 20px;
+    }
+
 }
-
-.sign-up-link a{
-    color: #000;
-    font-weight: 600;
-
-}
-
-.skip{
-   justify-content: center;
-   margin-top: 20px;
-} 
-
