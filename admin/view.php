@@ -1,3 +1,4 @@
+<!-- file view php -->
 <?php
 require "../config/config.php";
 require "../admin/data.php";

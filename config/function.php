@@ -1,3 +1,4 @@
+<!-- file function php -->
 <?php
 
 function validasiData($data){
@@ -75,4 +76,5 @@ function delProduct($koneksi, $id){
     if($result) return true;
     else return false; 
 }
+
 ?>
