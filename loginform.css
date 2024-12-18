@@ -22,18 +22,13 @@ body {
     padding: 40px 30px 40px 40px;
 }
 
-.header-text {
-    color: #1A1A19;
-}
-
 .btn {
-    --glow-color: rgb(144, 224, 200);
-    /* Soft Aqua Teal */
+    --glow-color: rgb(48, 210, 162);
     --glow-spread-color: rgba(102, 153, 135, 0.6);
-    /* Teal transparan */
+   
     --enhanced-glow-color: rgb(192, 229, 219);
-    /* Light Mint Teal */
-    --btn-color: rgb(70, 90, 90); /* Abu-abu teal tua */
+    
+    --btn-color: rgb(30, 60, 57); 
 
 
     border: 0.25rem solid var(--glow-color);
