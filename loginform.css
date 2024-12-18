@@ -107,7 +107,7 @@ body {
 }
 
 /* for small screens */
-@media only screen and (max-width: 768px) {
+@media all and (max-width: 300px) {
     .box-area {
         margin: 0 10px;
     }
