@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.aboreto-regular {
+    font-family: "Aboreto", system-ui !important;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.open-sans {
+    font-family: "Open Sans", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.fs-7 {
+    font-size: 0.8rem !important;
+}
+
+.navbar-brand {
+    margin-left: 100px;
+    text-decoration: none;
+    list-style: none;
+    position: fixed;
+}
+
+.navbar-toggler {
+    margin-left: -100px;
+    /* Jarak antara toggler dan login button, sesuaikan sesuai kebutuhan */
+    border: none;
+    font-size: 1.25 rem;
+}
+
+.navbar :focus,
+.btn-close :focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+    position: relative;
+}
+
+.navbar-nav a:hover,
+.nav-link.active {
+    color: #000000;
+    /* Ubah warna saat hover */
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #000000;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+
+    }
+
+    .nav-link:hover:before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+/* Mengatur tampilan dropdown saat di-hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    /* Menampilkan dropdown */
+    margin-top: 0;
+    /* Mencegah penundaan margin */
+}
+
+/* Tambahkan pointer ke dropdown toggle */
+.nav-link.dropdown-toggle::after {
+    display: none;
+    /* Menghapus tanda panah default bootstrap */
+}
+
+/* DETAIL PRODUCT START*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+.container {
+    max-width: 990px;
+}
+
+.small-image-group {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    gap: 15px;
+    max-width: 120px;
+
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 495px;
+    gap: 25px;
+}
+
+.small-image-group .small-image img {
+    height: 10vh;
+    border: 0.5px solid lightgray;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.small-image:hover{
+    box-shadow: 0 0 6px rgba(58, 58, 92, 1);
+    border-radius: 5px;
+}
+
+.main-image {
+    max-width: 375px;
+}
+
+.main-image img {
+    max-width: 325px;
+    border-radius: 7px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 990px;
+    height: 90vh;
+}
+
+.right-section {
+    max-width: 495px;
+    /* height: 55vh; */
+}
+
+.right-section .content h5 {
+    font-family: "Open Sans", sans-serif !important;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0px;
+}
+
+.size {
+    display: flex;
+}
+
+.psize {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgb(180, 178, 178);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    user-select: none;
+    margin: 0 10px;
+}
+
+.psize:hover {
+    background-color: #dadae7;
+    border-color: #999;
+    color: rgb(0, 0, 0);
+}
+
+.psize:active {
+    background-color: #e0e0e0;
+    transform: scale(0.95);
+}
+
+.psize.active {
+    background-color: #000000;
+    color: white;
+    border-color: #333;
+}
+
+.sub-btn {
+    padding: 0 0px;
+}
+
+.sub-btn .submit {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background: black;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px rgba(85, 63, 240, 0.25);
+    transition: .4s linear;
+}
+
+.sub-btn .submit:hover {
+    background: #2a2a4a;
+}
+
+.submit.active {
+    background-color: #2a2a4a;
+    color: white;
+    border-color: #333;
+}
